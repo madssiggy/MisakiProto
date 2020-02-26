@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class slimeControl : MonoBehaviour
 {
@@ -56,14 +57,16 @@ public class slimeControl : MonoBehaviour
             switch (this.gameObject.tag) {
                 case "BigSlime":
                     Destroy(this.gameObject);
-                    Debug.Log("BiggestSlimes Disappear!");
+					FindObjectOfType<ScoreManager>().AddPoint(10);
+					Debug.Log("BiggestSlimes Disappear!");
                     break;
                 case "MiddleSlime":
                     //おっきくなって上位存在のプレハブ生産
                     Vector3 tmp = this.gameObject.transform.position;//生まれる位置（＝変更前の位置)取得
                     GameObject OYA = transform.parent.gameObject;//親クラス取得
                     Destroy(this.gameObject);
-                    script.CreatePrefabAsChild(OYA, (GameObject)Resources.Load("Prefab/BigSlime"),
+					FindObjectOfType<ScoreManager>().AddPoint(10);
+					script.CreatePrefabAsChild(OYA, (GameObject)Resources.Load("Prefab/BigSlime"),
                         tmp, "BigSlime");
                     break;
                 case "SmallSlime":
@@ -71,7 +74,8 @@ public class slimeControl : MonoBehaviour
                     Vector3 tmp2 = this.gameObject.transform.position;//生まれる位置（＝変更前の位置)取得
                     GameObject OYA2 = transform.parent.gameObject;//親クラス取得
                     Destroy(this.gameObject);
-                    GameObject G = (GameObject)Resources.Load("Prefab/MiddleSlime");
+					FindObjectOfType<ScoreManager>().AddPoint(10);
+					GameObject G = (GameObject)Resources.Load("Prefab/MiddleSlime");
                     script.CreatePrefabAsChild(OYA2,G,// (GameObject)Resources.Load("Prefab/MiddleSlime")
                         tmp2, "MiddleSlime");
                     break;
