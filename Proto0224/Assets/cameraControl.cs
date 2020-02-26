@@ -5,12 +5,17 @@ using UnityEngine;
 public class cameraControl : MonoBehaviour
 {
     GameObject targetObj;
+    GameObject Manager;
     Vector3 targetPos;
+    manager script;
     // Start is called before the first frame update
     void Start()
     {
-        targetObj = GameObject.Find("Field");
+        targetObj = GameObject.Find("FieldCenter");
         targetPos = targetObj.transform.position;
+
+        Manager = GameObject.Find("Manager");
+        script = Manager.GetComponent<manager>();
     }
 
     // Update is called once per frame
@@ -29,10 +34,17 @@ public class cameraControl : MonoBehaviour
         if (Input.anyKey) {
             // カメラ移動量
             float InputX = 0f;//Input.GetAxis("Mouse X");
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift)) {
                 InputX = -90f;
-            if (Input.GetKeyDown(KeyCode.RightShift))
+                script.changeCameraRotate();
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightShift)) {
                 InputX = 90f;
+                script.changeCameraRotate();
+
+            }
+                
             //           float mouseInputY = Input.GetAxis("Mouse Y");
             // targetの位置のY軸を中心に、回転（公転）する
             transform.RotateAround(targetPos, Vector3.up, InputX );

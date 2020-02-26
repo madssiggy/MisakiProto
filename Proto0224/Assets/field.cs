@@ -15,8 +15,8 @@ public class field : MonoBehaviour
     //[System.Serializable]
     //public struct SlimeAttriBute
     //{
-    [SerializeField, PersistentAmongPlayMode] public Vector3[] SpawnSlimePos;//スライムごとの位置
-    [SerializeField, PersistentAmongPlayMode] public string[] TakenTag;//スライムごとのタグ
+    [SerializeField, PersistentAmongPlayMode] public Vector3 SpawnSlimePos;//スライムごとの位置
+    [SerializeField, PersistentAmongPlayMode] public string TakenTag;//スライムごとのタグ
 
     //}
     //[SerializeField, PersistentAmongPlayMode] SlimeAttriBute[] slime;
@@ -36,7 +36,7 @@ public class field : MonoBehaviour
 
      
         for(int i=0;i<AppearSlimeCount;i++)
-        script.CreatePrefabAsChild(GameObject.Find("Field"), (GameObject)Resources.Load("Prefab/SmallSlime"),SpawnSlimePos[i],TakenTag[i]);
+        script.CreatePrefabAsChild(this.gameObject, (GameObject)Resources.Load("Prefab/SmallSlime"),SpawnSlimePos,TakenTag);
       
     }
 
@@ -47,21 +47,29 @@ public class field : MonoBehaviour
         // キーを押している間
         if (Input.anyKey) {
             // 移動量
-            float InputZ = 0f;//Input.GetAxis("Mouse X");
+            float ToRotate = 0f;//Input.GetAxis("Mouse X");
             if (Input.GetKeyDown(KeyCode.LeftArrow)) {
 
                 script.SetTop(script.nowTop, true);
-                InputZ = -90f;
+               ToRotate = -90f;
 
             }
 
             if (Input.GetKeyDown(KeyCode.RightArrow)) {
                 script.SetTop(script.nowTop, false);
-                InputZ = 90f;
+               ToRotate = 90f;
         }
             //           float mouseInputY = Input.GetAxis("Mouse Y");
             // targetの位置のZ軸を中心に、回転（公転）する
-            transform.RotateAround(targetPos, Vector3.forward, InputZ);
+            switch (script.cameraRotate) {
+                case true:
+                    transform.RotateAround(targetPos, Vector3.right, ToRotate);
+                    break;
+                case false:
+                    transform.RotateAround(targetPos, Vector3.forward, ToRotate);
+                    break;
+            }
+           
             }
         }
 

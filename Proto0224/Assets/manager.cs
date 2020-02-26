@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class manager : MonoBehaviour
 {
+    public bool cameraRotate;//true=x軸から、false=Z軸から
     public enum Wall {
         Top,Bottom,Left,Right,
     }
@@ -11,6 +12,7 @@ public class manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cameraRotate = false;
         nowTop = (int)Wall.Top;
     }
 
@@ -64,20 +66,26 @@ public class manager : MonoBehaviour
 
   public  void CreatePrefabAsChild(GameObject Parents,GameObject Child,Vector3 Posit=default(Vector3),string tag=default(string))
     {
-        GameObject prefab = Child;// (GameObject)Resources.Load("Prefabs/Effects/Prefab名");
-
         Vector3 pos = Posit;
-        //Vector3 pos = Vector3.Scale(Parents.transform.position,Posit);
-        //Vector3.Normalize(pos);
-
         // プレハブからインスタンスを生成
-        GameObject obj = (GameObject)Instantiate(prefab, pos, Quaternion.identity);
-        obj.tag = tag;
-        // 作成したオブジェクトを子として登録
+        GameObject obj = (GameObject)Instantiate(Child, pos, Quaternion.identity);
+     // 作成したオブジェクトを子として登録
         obj.transform.parent = Parents.transform;
     }//Parentsで親クラスをGameObjectで直接指定し、Childでプレハブで指定する。
+
     public Vector3 MakeVector3(float x,float y,float z)
     {
         return new Vector3(x, y, z);
+    }
+    public void changeCameraRotate()
+    {
+        switch (cameraRotate) {
+            case true:
+                cameraRotate = false;
+                break;
+            case false:
+                cameraRotate = true;
+                break;
+        }
     }
 }

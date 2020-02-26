@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7570129644832186996}
   - component: {fileID: 4048230303093108482}
   - component: {fileID: 4414595522624285987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BigSlime
   m_TagString: BigSlime
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1104126741659681456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.5, y: 4.5, z: 4.5}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 8812969602751294134}
   m_Father: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 7218278241513550904}
   - component: {fileID: 8227775471695728855}
   - component: {fileID: 7925665415773687367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SlimeCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5245373249351898889}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.55, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_Children: []
   m_Father: {fileID: 1523101302063205815}
