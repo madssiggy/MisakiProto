@@ -59,9 +59,10 @@ public class slimeControl : MonoBehaviour
                 case "BigSlime":
                     //大スライムを消す
                     Destroy(this.gameObject);
+					FindObjectOfType<Score>().AddPoint(10);
 
-                    //デバッグ表記
-                    Debug.Log("BiggestSlimes Disappear!");
+					//デバッグ表記
+					Debug.Log("BiggestSlimes Disappear!");
 
                     break;
 
@@ -74,11 +75,12 @@ public class slimeControl : MonoBehaviour
                     Vector3 tmp = this.gameObject.transform.position;   //生成位置（＝変更前の位置)取得
                     GameObject OYA = transform.parent.gameObject;       //親クラス取得
                     Destroy(this.gameObject);                           //中スライムを消す
+					FindObjectOfType<Score>().AddPoint(10);
 
-                    //プレハブを取得
- 
-  
-                    script.CreatePrefabAsChild
+					//プレハブを取得
+
+
+					script.CreatePrefabAsChild
                     (
                         OYA,                                            //親クラス
                         (GameObject)Resources.Load("Prefab/BigSlime"),  //プレハブ選択
@@ -96,8 +98,9 @@ public class slimeControl : MonoBehaviour
                     Vector3 tmp2 = this.gameObject.transform.position;  //生成位置（＝変更前の位置)取得               
                     GameObject OYA2 = transform.parent.gameObject;      //親クラス取得  
                     Destroy(this.gameObject);                           //小スライムを消す             
-                    
-                    script.CreatePrefabAsChild
+					FindObjectOfType<Score>().AddPoint(10);
+
+					script.CreatePrefabAsChild
                     (
                         OYA2,                                           //親クラス
                         (GameObject)Resources.Load("Prefab/MiddleSlime"),      //プレハブ選択
