@@ -8,13 +8,14 @@ public class cameraControl : MonoBehaviour
     GameObject Manager;
     Vector3 targetPos;
     manager script;
+
     // Start is called before the first frame update
     void Start()
     {
         targetObj = GameObject.Find("FieldCenter");
         targetPos = targetObj.transform.position;
 
-        Manager = GameObject.Find("Manager");
+        Manager = GameObject.Find("StageManager");
         script = Manager.GetComponent<manager>();
     }
 
@@ -35,21 +36,21 @@ public class cameraControl : MonoBehaviour
             // カメラ移動量
             float InputX = 0f;//Input.GetAxis("Mouse X");
             if (Input.GetKeyDown(KeyCode.LeftShift)) {
-                InputX = -90f;
+                InputX = -90.0f;
                 script.changeCameraRotate();
             }
 
             if (Input.GetKeyDown(KeyCode.RightShift)) {
-                InputX = 90f;
+                InputX = 90.0f;
                 script.changeCameraRotate();
 
             }
                 
-            //           float mouseInputY = Input.GetAxis("Mouse Y");
+            // float mouseInputY = Input.GetAxis("Mouse Y");
             // targetの位置のY軸を中心に、回転（公転）する
             transform.RotateAround(targetPos, Vector3.up, InputX );
             // カメラの垂直移動（※角度制限なし、必要が無ければコメントアウト）
-      //      transform.RotateAround(targetPos, transform.right, mouseInputY * Time.deltaTime * 200f);
+            // transform.RotateAround(targetPos, transform.right, mouseInputY * Time.deltaTime * 200f);
         }
     }
 }

@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class manager : MonoBehaviour
 {
-    public bool cameraRotate;//true=x軸から、false=Z軸から
-    public enum Wall {
-        Top,Bottom,Left,Right,
+    public bool cameraRotate;   //true = X軸、false = Z軸
+
+    public enum Wall
+    {
+        Top = 0,
+        Bottom,
+        Left,
+        Right
     }
-    public int nowTop;
+    public int nowTop;  //現在上にある面が何かを保持する
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +29,11 @@ public class manager : MonoBehaviour
     }
     public void SetTop(int ChangeTop,bool rollWay)
     {
-        switch (rollWay) {
-
+        switch (rollWay)
+        {
             case true:
-                switch (ChangeTop) {
+                switch (ChangeTop)
+                {
                     case (int)Wall.Top:
                         nowTop = (int)Wall.Left;
                         break;
@@ -42,8 +49,10 @@ public class manager : MonoBehaviour
                     default:break;
                 }
                 break;
+
             case false:
-                switch (ChangeTop) {
+                switch (ChangeTop)
+                {
                     case (int)Wall.Top:
                         nowTop = (int)Wall.Right;
                         break;
@@ -59,27 +68,33 @@ public class manager : MonoBehaviour
                     default:
                         break;
                 }
-                        break;
+                break;
+                
+            default:
+                break;
 
         }
     }//rollWay=trueが左、falseが左
 
-  public  void CreatePrefabAsChild(GameObject Parents,GameObject Child,Vector3 Posit=default(Vector3),string tag=default(string))
+    public void CreatePrefabAsChild(GameObject Parents, GameObject Child, Vector3 Posit = default(Vector3), string tag = default(string))
     {
         Vector3 pos = Posit;
         // プレハブからインスタンスを生成
         GameObject obj = (GameObject)Instantiate(Child, pos, Quaternion.identity);
-     // 作成したオブジェクトを子として登録
+        // 作成したオブジェクトを子として登録
         obj.transform.parent = Parents.transform;
     }//Parentsで親クラスをGameObjectで直接指定し、Childでプレハブで指定する。
 
+    /*
     public Vector3 MakeVector3(float x,float y,float z)
     {
         return new Vector3(x, y, z);
     }
+    */
     public void changeCameraRotate()
     {
-        switch (cameraRotate) {
+        switch (cameraRotate)
+        {
             case true:
                 cameraRotate = false;
                 break;

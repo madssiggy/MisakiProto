@@ -384,12 +384,12 @@ PrefabInstance:
     - target: {fileID: 3428158470130667659, guid: 6fc2be42f3494df4e9c8175ad438d65c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7496991107716531506, guid: 6fc2be42f3494df4e9c8175ad438d65c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fc2be42f3494df4e9c8175ad438d65c, type: 3}
@@ -883,12 +883,12 @@ PrefabInstance:
     - target: {fileID: 3428158470130667659, guid: 6fc2be42f3494df4e9c8175ad438d65c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7496991107716531506, guid: 6fc2be42f3494df4e9c8175ad438d65c,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fc2be42f3494df4e9c8175ad438d65c, type: 3}
@@ -1692,7 +1692,7 @@ GameObject:
   - component: {fileID: 1540744566}
   - component: {fileID: 1540744565}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: StageManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
