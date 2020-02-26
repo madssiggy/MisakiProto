@@ -156,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 138367951705859303, guid: 6fc2be42f3494df4e9c8175ad438d65c,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 138367952356479938, guid: 6fc2be42f3494df4e9c8175ad438d65c,
         type: 3}
@@ -976,7 +976,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -20.63}
+  m_LocalPosition: {x: 3.75, y: 3, z: -20.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1296,11 +1296,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 138367950934567669, guid: 6fc2be42f3494df4e9c8175ad438d65c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 138367951448636598, guid: 6fc2be42f3494df4e9c8175ad438d65c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1315,11 +1310,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 138367951448636601, guid: 6fc2be42f3494df4e9c8175ad438d65c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 138367951619150126, guid: 6fc2be42f3494df4e9c8175ad438d65c,
         type: 3}
@@ -1702,7 +1692,7 @@ GameObject:
   - component: {fileID: 1540744566}
   - component: {fileID: 1540744565}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: StageManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
