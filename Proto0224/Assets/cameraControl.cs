@@ -16,6 +16,7 @@ public class cameraControl : MonoBehaviour
 
         Manager = GameObject.Find("Manager");
         script = Manager.GetComponent<manager>();
+        CameraRoll();
     }
 
     // Update is called once per frame
