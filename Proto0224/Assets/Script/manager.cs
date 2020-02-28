@@ -19,7 +19,7 @@ public class manager : MonoBehaviour
     {
         small,middle,big,
     }
-public    static int[] DisappearSlimeNum;//スライムを消して生む動き用
+public static int[] DisappearSlimeNum;//スライムを消して生む動き用
 
     // Start is called before the first frame update
     void Start()
@@ -118,20 +118,18 @@ public    static int[] DisappearSlimeNum;//スライムを消して生む動き�
     {
         Vector3 tmp = DisappearSlime.transform.position;   //生成位置（＝変更前の位置)取得
     //    GameObject OYA = transform.parent.gameObject;       //親クラス取得
-        Destroy(this.gameObject);                           //中スライムを消す
+      //  Destroy(this.gameObject);                           //中スライムを消す
                                                             //      FindObjectOfType<Score>().AddPoint(10);
         string prefName = "Prefab/Empty";
        
         Destroy(DisappearSlime);
-        DisappearSlimeNum[slimeType]++;
+        DisappearSlimeNum[slimeType]+=1;
 
         if (DisappearSlimeNum[slimeType] == 2) {
             //プレハブを取得
             switch (slimeType) {
                 case (int)SlimeSize.small:
                     prefName = "Prefab/MiddleSlime";
-
-
                     break;
                 case (int)SlimeSize.middle:
 

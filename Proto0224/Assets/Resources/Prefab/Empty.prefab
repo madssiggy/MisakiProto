@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2143382823294793742}
   - component: {fileID: 845626360149368033}
   - component: {fileID: 1472453015892542065}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SlimeCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,9 +120,9 @@ GameObject:
   - component: {fileID: 1196878119438396994}
   - component: {fileID: 4736835182620205876}
   - component: {fileID: 4958852134767206677}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Empty
-  m_TagString: BigSlime
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
