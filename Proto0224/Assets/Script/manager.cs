@@ -5,6 +5,7 @@ using UnityEngine;
 public class manager : MonoBehaviour
 {
     public bool cameraRotate;   //true = X軸、false = Z軸
+	public int operate; //操作回数
 
     public enum Wall
     {
@@ -30,6 +31,8 @@ public static int[] DisappearSlimeNum;//スライムを消して生む動き用
         
         cameraRotate = false;
         nowTop = (int)Wall.Top;
+
+		operate = 440;
     }
 
     // Update is called once per frame
@@ -147,4 +150,9 @@ public static int[] DisappearSlimeNum;//スライムを消して生む動き用
 
 
     }//slimeType,true=small,false=Middle
+
+	public void operations(int point)
+	{
+		operate = operate + point;
+	}
 }

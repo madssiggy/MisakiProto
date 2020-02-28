@@ -57,13 +57,16 @@ public class slimeControl : MonoBehaviour
                 //大スライム同士が接触した場合
                 case "BigSlime":
                     Destroy(this.gameObject);
-                    break;
+					FindObjectOfType<Score>().AddPoint(10);
+					break;
                 case "MiddleSlime":
                     script.CreateSlime((int)manager.SlimeSize.middle, this.gameObject);
-                    break;
+					FindObjectOfType<Score>().AddPoint(10);
+					break;
                 case "SmallSlime:":
                     script.CreateSlime((int)manager.SlimeSize.small, this.gameObject);
-                    break;
+					FindObjectOfType<Score>().AddPoint(10);
+					break;
                 default:
                     break;
             }
