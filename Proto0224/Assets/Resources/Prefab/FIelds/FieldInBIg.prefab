@@ -504,14 +504,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138367952356479941}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af7655ccc32813a4b972ab5ecc93584b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AppearSlimeCount: 0
   SpawnSlimePos: {x: 0, y: 0, z: 0}
-  TakenTag: SmallSlime
 --- !u!1 &138367952473639261
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +563,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AppearSlimeCount: 1
   SpawnSlimePos: {x: 0, y: 0, z: 0}
-  TakenTag: 
 --- !u!1 &1977730554762649230
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +668,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigSlime
       objectReference: {fileID: 0}
+    - target: {fileID: 1104126741659681456, guid: 363a0552d3291a94ca84a2b0216a0e5b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1523101302063205815, guid: 363a0552d3291a94ca84a2b0216a0e5b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -724,6 +727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245373249351898889, guid: 363a0552d3291a94ca84a2b0216a0e5b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363a0552d3291a94ca84a2b0216a0e5b, type: 3}

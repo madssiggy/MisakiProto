@@ -147,7 +147,7 @@ public static int[] DisappearSlimeNum;//スライムを消して生む動き用
         }
 
         GameObject TMP = (GameObject)Instantiate((GameObject)Resources.Load(prefName), DisappearSlime.transform.position, Quaternion.identity);
-
+        TMP.transform.parent = GameObject.Find("FieldCenter").transform;
 
     }//slimeType,true=small,false=Middle
 
