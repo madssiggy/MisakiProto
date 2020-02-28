@@ -52,7 +52,7 @@ public class field : MonoBehaviour
             //==========================
             //　左にステージが90度傾く
             //==========================
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 //trueで左回転
                 script.SetTop(script.nowTop, true);
@@ -64,7 +64,7 @@ public class field : MonoBehaviour
             //==========================
             //　右にステージが90度傾く
             //==========================
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 //falseで右回転
                 script.SetTop(script.nowTop, false);
