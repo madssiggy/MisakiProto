@@ -5,8 +5,10 @@ using UnityEngine;
 public class manager : MonoBehaviour
 {
     public bool cameraRotate;   //true = X軸、false = Z軸
+	public int operate;
 
-    public enum Wall
+
+	public enum Wall
     {
         Top = 0,
         Bottom,
@@ -20,6 +22,7 @@ public class manager : MonoBehaviour
     {
         cameraRotate = false;
         nowTop = (int)Wall.Top;
+		operate = 220;
     }
 
     // Update is called once per frame
@@ -103,4 +106,14 @@ public class manager : MonoBehaviour
                 break;
         }
     }
+	public void operations(int point)
+	{
+		if (operate>0)
+		{
+			operate = operate + point;
+		}
+		
+	
+	}
+
 }
