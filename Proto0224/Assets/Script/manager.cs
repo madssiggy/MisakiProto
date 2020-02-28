@@ -15,9 +15,19 @@ public class manager : MonoBehaviour
     }
     public int nowTop;  //現在上にある面が何かを保持する
 
+    public enum SlimeSize
+    {
+        small,middle,big,
+    }
+public    static int[] DisappearSlimeNum;//スライムを消して生む動き用
+
     // Start is called before the first frame update
     void Start()
     {
+        DisappearSlimeNum = new int[2];
+        for(int i=0;i<2;i++)
+        DisappearSlimeNum[i] = 0;
+        
         cameraRotate = false;
         nowTop = (int)Wall.Top;
     }
@@ -103,4 +113,40 @@ public class manager : MonoBehaviour
                 break;
         }
     }
+
+    public void CreateSlime(int slimeType,GameObject DisappearSlime)
+    {
+        Vector3 tmp = DisappearSlime.transform.position;   //生成位置（＝変更前の位置)取得
+    //    GameObject OYA = transform.parent.gameObject;       //親クラス取得
+        Destroy(this.gameObject);                           //中スライムを消す
+                                                            //      FindObjectOfType<Score>().AddPoint(10);
+        string prefName = "Prefab/Empty";
+       
+        Destroy(DisappearSlime);
+        DisappearSlimeNum[slimeType]++;
+
+        if (DisappearSlimeNum[slimeType] == 2) {
+            //プレハブを取得
+            switch (slimeType) {
+                case (int)SlimeSize.small:
+                    prefName = "Prefab/MiddleSlime";
+
+
+                    break;
+                case (int)SlimeSize.middle:
+
+                    prefName = "Prefab/BigSlime";
+                    break;
+                default:
+                    break;
+
+            }
+
+            DisappearSlimeNum[slimeType] = 0;
+        }
+
+        GameObject TMP = (GameObject)Instantiate((GameObject)Resources.Load(prefName), DisappearSlime.transform.position, Quaternion.identity);
+
+
+    }//slimeType,true=small,false=Middle
 }
