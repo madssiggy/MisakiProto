@@ -57,9 +57,9 @@ public class field : MonoBehaviour
                 //trueで左回転
                 script.SetTop(script.nowTop, true);
                 ToRotate = -90.0f;
-				script.operations(-1);//値では-1なのに実際には-22される
-				
-            }
+				script.operations(-1);
+
+			}
 
             //==========================
             //　右にステージが90度傾く
@@ -69,7 +69,7 @@ public class field : MonoBehaviour
                 //falseで右回転
                 script.SetTop(script.nowTop, false);
                 ToRotate = 90.0f;
-				script.operations(-1);//同じく-22される
+				script.operations(-1);
 			}
             // float mouseInputY = Input.GetAxis("Mouse Y");
             // targetの位置のZ軸を中心に、回転（公転）する
